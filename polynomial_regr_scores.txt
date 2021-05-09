@@ -1,0 +1,21 @@
+features: ['VolumeAvg1D', 'VolumeAvg3D'] score: 0.3662084165594085 
+features: ['VolumeAvg1D', 'VolumeAvg3D', 'TemperatureMin', 'TemperatureMax'] score: 0.41800489109015304 
+features: ['VolumeAvg1D', 'VolumeAvg3D', 'TemperatureMin', 'TemperatureMax', 'IsRain', 'IsSnow', 'DaysBA_MigrVacation'] score: 0.5955868057501857 
+features: ['VolumeAvg1D', 'VolumeAvg3D', 'TemperatureMin', 'TemperatureMax', 'IsRain', 'IsSnow', 'DaysBA_MigrVacation'] score: 0.402704834591884 
+features: ['VolumeAvg3D', 'VolumeAvg7D', 'TemperatureMin', 'TemperatureMax', 'IsRain', 'IsSnow', 'DaysBA_MigrVacation'] score: 0.5920902388651239 
+features(with sort by Date, standardized): ['VolumeAvg3D', 'VolumeAvg7D', 'TemperatureMin', 'TemperatureMax', 'IsRain', 'IsSnow', 'DaysBA_MigrVacation'] score: 0.5974122897142342
+features: ['VolumeAvg3D', 'VolumeAvg7D', 'TemperatureMin', 'TemperatureMax', 'IsRain', 'IsSnow', 'DaysBA_MigrVacation'] score: 0.5974122818301244, mae: 0.045845257733148743
+features: ['VolumeAvg3D', 'VolumeAvg7D', 'TemperatureMin', 'TemperatureMax', 'IsRain', 'IsSnow', 'DaysBA_MigrVacation'] score: 0.5974122818301244, mae: 0.045845257733148743, % off from avg target 47.304108825271975
+features: ['VolumeAvg7D', 'VolumeAvg3D', 'TemperatureMin', 'DaysBA_MigrVacation'] score: 0.4044874661360939, mae: 0.054860943800663566, % off from avg target 56.606684837705224
+features: ['VolumeAvg7D', 'VolumeAvg3D', 'TemperatureMin', 'DaysBA_MigrVacation'] score: 0.37624147139746955, mae: 0.05569157910971613, % off from avg target 49.668665872940174
+features: ['VolumeAvg7D', 'VolumeAvg3D', 'TemperatureMin', 'DaysBA_MigrVacation'] score: 0.37624147139746955, mae: 0.05569157910971613, % off from avg target 49.668665872940174
+features: ['VolumeAvg7D', 'VolumeAvg3D', 'TemperatureMin', 'DaysBA_MigrVacation'] score: 0.37624147139746955, mae: 0.05569157910971613, % off from avg target 49.668665872940174
+features: ['VolumeAvg3D', 'VolumeAvg7D', 'TemperatureMin', 'TemperatureMax', 'IsRain', 'IsSnow', 'DaysBA_MigrVacation'] score: 0.5318005649820037, mae: 0.0500461704243683, % off from avg target 44.633794853098394
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.6510106056935754, mae: 0.03902578231592193, % off from avg target 34.80523578727993
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596204262924697, mae: 0.00795178003889057, % off from avg target 7.090902194276856
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, % off from avg target 7.146681495956717
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, % off from avg target 7.146681495956717
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, % off from avg target 7.146681495956717
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, % off from avg target 7.146681495956717
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, mae_unscaled: 57.35697880726008, % off from avg target 7.146681495956717
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, mae_unscaled: 57.35697880726008, % off from avg target 15.001416003195903
