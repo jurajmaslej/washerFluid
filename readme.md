@@ -27,6 +27,11 @@ Rest of the parameters has lesser influence.
    ![alt text](graphs/correlation/correlation_graph_sales_volume.png)
    <br> Correlation for categoric variable, correlation for volume averages can be found in `graphs/correlation`.
 
+### 4. Principal component analysis
+
+Dataset offers many features and it was crucial for Polynomial Regression to choose right ones.
+Therefore we ran PCA algorithm. 
+   ![alt text](graphs/feature_analysis/PCA.png)<br>
 
 ## Models:
 
@@ -43,8 +48,14 @@ As expected, feature with highest correlation yielded best results. However, res
  IsCombinedVacations score: 0.03299835518501382
  DaysBA_MigrVacation score: 0.015404750150970203
 ```
-Score is on training data. Model was not able to fit even training data.
+Score is on training data. Model was not able (as expected) to fit even the training data.
 
 ### Polynomial Regression:
 
-Maximal number of features we were able to fit polynomial regression on was 7 due to performance limitations.
+Maximal number of features we were able to fit polynomial regression on was 8 due to performance limitations.
+#### Polynomial regression using features highlighted by PCA
+60 data points are choosen on random. Plotting all points would result in too confusing graph. <br>
+![alt text](graphs/regression/polynom_regression_unscaled_high_pca_scatter.png) <br>
+#### Same features, but plotted first 100 data points <br>
+![alt text](graphs/regression/polynom_regression_high_pca.png) <br>
+**Conclusion:** Peaks are predicted correctly, model has problem with precisely predicting target around its mean values. <br>
