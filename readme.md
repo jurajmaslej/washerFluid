@@ -30,7 +30,7 @@ Rest of the parameters has lesser influence.
 ### 4. Principal component analysis
 
 Dataset offers many features and it was crucial for Polynomial Regression to choose right ones.
-Therefore we ran PCA algorithm. 
+Therefore we ran PCA algorithm. <br>
    ![alt text](graphs/feature_analysis/PCA.png)<br>
 
 ## Models:
@@ -67,4 +67,28 @@ Score and Errors: `score: 0.9596083458790351, mae: 0.008013301160981182, mae_on_
 That means average prediction was off by **57** litters from truth. That is **7.147%** from average sold amount.
 
 **Conclusion:** Peaks are predicted correctly, model has problem with precisely predicting target around its mean values. <br>
+
+### SVM:
+
+Various hyperparameters were tried. Also various features selection.<br>
+However we were not able to get below `mean absolute error = 360 liters`
+
+
+### Neural network
+
+Keras with visualization in tensorboard was used. Feature selection was also applied.
+Tested `keras.losses.MeanSquaredError` and `keras.losses.MeanAbsolutePercentageError`. Used `MSE`.
+Computational power was limiting factor, as training had to be cut early. <br>
+We experimented with various network models, none had more than 3 hidden layers. <br>
+`
+model = Sequential()
+        model.add(Dense(12, input_dim=input_dim, kernel_initializer='normal', activation='relu'))
+        model.add(Dense(10, activation='relu'))
+        model.add(Dense(6, activation='relu'))
+        model.add(Dense(1, activation='sigmoid'))
+`
+Mae was 0.0489 which translates to around **350 liters**. Which is result worse than with polynomial regression.
+However loss was still droppping and model was trainig, so there is further potential in using neural network.
+![alt text](graphs/neural_net/long_train_TensorBoard.png) <br>
+
 
