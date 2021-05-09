@@ -2,9 +2,10 @@
 
 ## Analysis process
 
-1. Identify and fix NaN values
-   1.1. Dropped all row with Target == 0
-2. Check if data are consistent - plot histograms, check if data "makes sense"
+### 1. Clean data
+   1.1. Dropped all row with Target == 0 <br>
+   1.2. Normalized numeric data
+### 2. Check if data are consistent - plot histograms, check if data "makes sense"
    One of issues:
    Features `IsRain` and `IsDry` are not consistent. Let's explain, there are `n` days, `a` rainy days.
    One would expect that there will be approximately `n` - `a` days with tag `IsDry`.
@@ -15,16 +16,16 @@
    2.2. `TemperatureMin/Max` correlates more with `AvgVolume7D` than `AvgVolume1D`.
    Would assume that actual temperature correlates more with 1 day average than 7 day average. <br>
    2.3. Values higher than certain treshold for `Days_BA_xxxx` are grouped to one value. Not really an issue <br>
-3. Correlation: We are interested only in correlation with Target. We are not interested in correlation between Rain&Humidity.
-Therefore check only correlation with Target (or its averages).
-   VolumeAvg features were deleted from this analysis, as their high correlation with Target is obvious.
-   ![alt text](graphs/correlation_graph_Target.png)
-   Correlation for categoric variable, correlation for volume averages can be found in `graphs/correlation`.
-   
-### Results of correlation analysis:
-TemperatureMax/Min has highest correlation.  </br>
+### 3. Correlation:
+We are interested only in correlation with Target. We are not interested in correlation between Rain&Humidity.
+Therefore check only correlation with Target (or its averages). <br>
+TemperatureMax/Min has highest correlation with Target  <br>
 Pressure, Humidity, WindSpeedPrecipIntCoefAvg14D, DaysBA_MgrHoliday has similar level of correlation.
 Rest of the parameters has lesser influence.
+   VolumeAvg features were deleted from this analysis, as their high correlation with Target is obvious.
+   ![alt text](graphs/correlation/correlation_graph_Target.png)
+   ![alt text](graphs/correlation/correlation_graph_sales_volume.png)
+   <br> Correlation for categoric variable, correlation for volume averages can be found in `graphs/correlation`.
 
 
 ## Models:
