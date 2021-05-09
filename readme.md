@@ -58,4 +58,13 @@ Maximal number of features we were able to fit polynomial regression on was 8 du
 ![alt text](graphs/regression/polynom_regression_unscaled_high_pca_scatter.png) <br>
 #### Same features, but plotted first 100 data points <br>
 ![alt text](graphs/regression/polynom_regression_high_pca.png) <br>
+
+#### Error Metric:
+Results are logged to: `polynomial_regr_scores.txt`.
+Best achieved results were with features : 
+` ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef']` <br>
+Score and Errors: `score: 0.9596083458790351, mae: 0.008013301160981182, mae_on_raw_data: 57.35697880726008, % off from avg target 7.146681495956717`<br>
+That means average prediction was off by **57** litters from truth. That is **7.147%** from average sold amount.
+
 **Conclusion:** Peaks are predicted correctly, model has problem with precisely predicting target around its mean values. <br>
+
