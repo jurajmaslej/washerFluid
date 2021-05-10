@@ -87,8 +87,16 @@ model = Sequential()
         model.add(Dense(6, activation='relu'))
         model.add(Dense(1, activation='sigmoid'))
 `
-Mae was 0.0489 which translates to around **350 liters**. Which is result worse than with polynomial regression.
-However loss was still droppping and model was trainig, so there is further potential in using neural network.
+Mae was 0.0489 which translates to around **350 liters**. That is result worse than with polynomial regression.
+However, loss was still dropping and model was training, so there is further potential in using neural network.<br>
 ![alt text](graphs/neural_net/long_train_TensorBoard.png) <br>
+
+
+### More models to implement:
+Random Forest, Decision Tree
+
+
+## Another approach:
+Create Dataframes of data by SIDTank, train model per SIDTank. ToDo
 
 
