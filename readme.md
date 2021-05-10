@@ -55,6 +55,7 @@ Score is on training data. Model was not able (as expected) to fit even the trai
 Maximal number of features we were able to fit polynomial regression on was 8 due to performance limitations.
 #### Polynomial regression using features highlighted by PCA
 60 data points are choosen on random. Plotting all points would result in too confusing graph. <br>
+Red points means prediction and target was the same. <br>
 ![alt text](graphs/regression/polynom_regression_unscaled_high_pca_scatter.png) <br>
 #### Same features, but plotted first 100 data points <br>
 ![alt text](graphs/regression/polynom_regression_high_pca.png) <br>
