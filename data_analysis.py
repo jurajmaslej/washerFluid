@@ -20,7 +20,7 @@ def feature_analysis(df):
 def correlation(df, features_list):
     # Pearson (linear) correlation
     corr_pearson = df[features_list].corr(method='pearson')
-    corr_pearson = corr_pearson.drop('Target')#.drop('VolumeAvg1D').drop('VolumeAvg3D').drop('VolumeAvg7D')
+    corr_pearson = corr_pearson.drop('Target').drop('VolumeAvg1D').drop('VolumeAvg3D').drop('VolumeAvg7D')
     corr_target_abs_values = dict()
     for feature in settings.features_target:
         corr_target_abs_values[feature] = np.abs(corr_pearson[feature].values)
@@ -30,11 +30,11 @@ def correlation(df, features_list):
                       index=corr_pearson.index)
     ax = df.plot.barh(width=0.8)
     ax.grid(True)
-    plt.savefig(os.path.join(settings.correlation_analysis, f"correlation_graph_sales_volume_with_volumes.png"), bbox_inches='tight')
+    plt.savefig(os.path.join(settings.correlation_analysis, f"correlation_graph_sales_volume.png"), bbox_inches='tight')
     plt.close()
 
     df = pd.DataFrame({'Target': corr_target_abs_values['Target']},
                       index=corr_pearson.index)
     ax = df.plot.barh()
     ax.grid(True)
-    plt.savefig(os.path.join(settings.correlation_analysis, f"correlation_graph_Target_with_volumes.png"), bbox_inches='tight')
+    plt.savefig(os.path.join(settings.correlation_analysis, f"correlation_graph_Target.png"), bbox_inches='tight')

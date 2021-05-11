@@ -49,5 +49,5 @@ def pca(train, validate):
 
     ax = explained_variance.plot.barh(width=0.8)
     ax.grid(True)
-    plt.savefig(os.path.join(f"{settings.feature_analysis}", f"{pca}.png"), bbox_inches='tight')
+    plt.savefig(os.path.join(f"{settings.feature_analysis}", f"pca.png"), bbox_inches='tight')
     pprint(explained_variance)

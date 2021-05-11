@@ -14,8 +14,56 @@ features: ['VolumeAvg3D', 'VolumeAvg7D', 'TemperatureMin', 'TemperatureMax', 'Is
 features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.6510106056935754, mae: 0.03902578231592193, % off from avg target 34.80523578727993
 features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596204262924697, mae: 0.00795178003889057, % off from avg target 7.090902194276856
 features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, % off from avg target 7.146681495956717
-features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, % off from avg target 7.146681495956717
-features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, % off from avg target 7.146681495956717
-features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, % off from avg target 7.146681495956717
 features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, mae_unscaled: 57.35697880726008, % off from avg target 7.146681495956717
-features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, mae_unscaled: 57.35697880726008, % off from avg target 15.001416003195903
+features: ['VolumeAvg7D', 'VolumeAvg3D', 'TemperatureMin', 'DaysBA_MigrVacation'] score: 0.37624147139746955, mae: 0.05569157910971613, mae_unscaled: 398.624818731724, % off from avg target 49.668665872940174
+ test mae: 406.0646217780214, % off from avg target 49.668665872940174
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, mae_unscaled: 57.35697880726008, % off from avg target 7.146681495956717
+ test mae: 1103788598.0785728, % off from avg target 7.146681495956717
+features: ['VolumeAvg7D', 'VolumeAvg3D', 'TemperatureMin', 'DaysBA_MigrVacation'] score: 0.37624147139746955, mae: 0.05569157910971613, mae_unscaled: 398.624818731724, % off from avg target 49.668665872940174
+ test mae: 406.0646217780214, test mae unscaled 0.056730988500310116 % off from avg target 50.022814699903776
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, mae_unscaled: 57.35697880726008, % off from avg target 7.146681495956717
+ test mae: 1103788598.0785728, test mae unscaled 154209.49008111362 % off from avg target 135974939.82062426
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation'] score: 0.3484603191469716, mae: 0.0570083640588693, mae_unscaled: 408.04999880483246, % off from avg target 50.84304362827652
+ test mae: 413.05723626396565, test mae unscaled 0.057707921507308364 % off from avg target 50.8842299523989
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange'] score: 0.39052728867239417, mae: 0.054807370201486266, mae_unscaled: 392.2958975303746, % off from avg target 48.88008207756555
+ test mae: 410.46968538182557, test mae unscaled 0.05734641668402212 % off from avg target 50.56547138205828
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D'] score: 0.510089994101117, mae: 0.0490204450961401, mae_unscaled: 350.87469870625614, % off from avg target 43.718999305555904
+ test mae: 148348.193064776, test mae unscaled 20.72561652366809 % off from avg target 18274.90939804522
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'PrecipIntCoef'] score: 0.4708741510007002, mae: 0.050363342679363605, mae_unscaled: 360.48678574428277, % off from avg target 44.916665675031695
+ test mae: 28237331.579875562, test mae unscaled 3945.0167466523935 % off from avg target 3478536.985209259
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'PrecipIntCoef'] score: 0.41447428218926896, mae: 0.05405505238894846, mae_unscaled: 386.9110160735081, % off from avg target 48.20912566622755
+ test mae: 410.86160205867185, test mae unscaled 0.05740117107358183 % off from avg target 50.61375132138873
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'PrecipIntCoef'] score: 0.41447428218926896, mae: 0.05405505238894846, mae_unscaled: 386.9110160735081, % off from avg target 48.20912566622755
+ test mae: 410.86160205867185, test mae unscaled 0.05740117107358183 % off from avg target 50.61375132138873
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, mae_unscaled: 57.35697880726008, % off from avg target 7.146681495956717
+ test mae: 1103788598.0785728, test mae unscaled 154209.49008111362 % off from avg target 135974939.82062426
+features: ['VolumeAvg7D', 'VolumeAvg3D', 'TemperatureMin', 'DaysBA_MigrVacation'] score: 0.37624147139746955, mae: 0.05569157910971613, mae_unscaled: 398.624818731724, % off from avg target 49.668665872940174
+ test mae: 406.0646217780214, test mae unscaled 0.056730988500310116 % off from avg target 50.022814699903776
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, mae_unscaled: 57.35697880726008, % off from avg target 7.146681495956717
+ test mae: 154209.49008111362, test mae unscaled 1103788598.0785728 % off from avg target 135974939.82062426
+features: ['VolumeAvg7D', 'VolumeAvg3D', 'TemperatureMin', 'DaysBA_MigrVacation'] score: 0.37624147139746955, mae: 0.05569157910971613, mae_unscaled: 398.624818731724, % off from avg target 49.668665872940174
+ test mae: 0.056730988500310116, test mae unscaled 406.0646217780214 % off from avg target 50.022814699903776
+features: ['VolumeAvg7D', 'VolumeAvg3D', 'TemperatureMin', 'DaysBA_MigrVacation'] score: 0.37624147139746955, mae: 0.05569157910971613, mae_unscaled: 398.624818731724, % off from avg target 49.668665872940174
+ test mae: 0.05674692190584615, test mae unscaled 406.17866865898816 % off from avg target 50.03686405482842
+features: ['VolumeAvg7D', 'VolumeAvg3D', 'TemperatureMin', 'DaysBA_MigrVacation'] score: 0.37624147139746955, mae: 0.05569157910971613, mae_unscaled: 398.624818731724, % off from avg target 49.668665872940174
+ test mae: 0.05674692190584615, test mae unscaled 406.17866865898816 % off from avg target 50.03686405482842
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, mae_unscaled: 57.35697880726008, % off from avg target 7.146681495956717
+ test mae: 0.1512713249069172, test mae unscaled 1082.7580297468592 % off from avg target 133.38419892306814
+features: ['VolumeAvg7D', 'VolumeAvg3D', 'TemperatureMin', 'DaysBA_MigrVacation'] score: 0.37624147139746955, mae: 0.05569157910971613, mae_unscaled: 398.624818731724, % off from avg target 49.668665872940174
+ test mae: 0.05674692190584615, test mae unscaled 406.17866865898816 % off from avg target 50.03686405482842
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, mae_unscaled: 57.35697880726008, % off from avg target 7.146681495956717
+ test mae: 0.1512713249069172, test mae unscaled 1082.7580297468592 % off from avg target 133.38419892306814
+features: ['TemperatureMin', 'TemperatureMax', 'Humidity', 'IsRain', 'IsSnow', 'IsCombinedVacations', 'DaysBA_MigrVacation'] score: 0.4367286174899333, mae: 0.053235990798296266, mae_unscaled: 381.0484012343665, % off from avg target 47.478643659328135
+ test mae: 0.06140301514199987, test mae unscaled 439.5056877870196 % off from avg target 54.14239606360559
+features: ['VolumeAvg7D', 'VolumeAvg3D', 'TemperatureMin', 'DaysBA_MigrVacation'] score: 0.37624147139746955, mae: 0.05569157910971613, mae_unscaled: 398.624818731724, % off from avg target 49.668665872940174
+ test mae: 0.056730988500310116, test mae unscaled 406.0646217780214 % off from avg target 50.022814699903776
+features: ['VolumeAvg7D', 'VolumeAvg3D', 'TemperatureMin', 'DaysBA_MigrVacation'] score: 0.37624147139746955, mae: 0.05569157910971613, mae_unscaled: 398.624818731724, % off from avg target 49.668665872940174
+ test mae: 0.05674692190584615, test mae unscaled 406.17866865898816 % off from avg target 50.03686405482842
+features: ['VolumeAvg7D', 'VolumeAvg3D', 'TemperatureMin', 'DaysBA_MigrVacation'] score: 0.37624147139746955, mae: 0.05569157910971613, mae_unscaled: 398.624818731724, % off from avg target 49.668665872940174
+ test mae: 0.056758329576471464, test mae unscaled 406.2603215894286 % off from avg target 50.04692282180804
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, mae_unscaled: 57.35697880726008, % off from avg target 7.146681495956717
+ test mae: 0.15127542597639976, test mae unscaled 1082.7873840604775 % off from avg target 133.38781506028383
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, mae_unscaled: 57.35697880726008, % off from avg target 7.146681495956717
+ test mae: 0.21916755836085217, test mae unscaled 1568.7403664987323 % off from avg target 193.25202063163982
+features: ['SegmentId', 'TankAge', 'DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D', 'PrecipIntCoef'] score: 0.9596083458790351, mae: 0.008013301160981182, mae_unscaled: 57.35697880726008, % off from avg target 7.146681495956717
+ test mae: 6.187225648707533, test mae unscaled 44286.43866982792 % off from avg target 5455.615181640928

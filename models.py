@@ -29,8 +29,11 @@ class Models:
         self.raw_train = train.copy()
         train = train.drop(columns=['Date', 'SIDTank'])
         target = train[target_colum].to_numpy()
+        target_test = test[target_colum].to_numpy()
         self.target = np.array([[y, ] for y in target])
+        self.target_test = np.array([[y, ] for y in target_test])
         self.target.reshape(len(self.target), 1)
+        self.target_test.reshape(len(self.target_test), 1)
         self.train = train.drop(columns=[target_colum])
 
     def _evaluate_mae(self, prediction, target, name):
@@ -48,8 +51,8 @@ class Models:
             score = reg.score(x, self.target)
             print(f"feature {feature} score: {score}")
 
-    def un_normalize(self, prediction, scaler):
-        train_df = self.raw_train.copy()
+    def un_normalize(self, prediction, scaler, raw_data):
+        train_df = raw_data.copy()
         train_df = train_df[settings.features_numeric]
         train_df['Target'] = prediction
         print(f"shape for inv transf2 {train_df.shape}")
@@ -57,30 +60,47 @@ class Models:
         train_df[train_df.columns] = scaler.inverse_transform(train_df)
         return train_df['Target'].values
 
+    def unscale_results(self, prediction, target, scaler, raw_data):
+        pred_unscaled = self.un_normalize(prediction, scaler, raw_data=raw_data)
+        target_unscaled = self.un_normalize(target, scaler, raw_data=raw_data)
+        return pred_unscaled, target_unscaled
+
     def polynomial_regression(self, scaler):
         using_features = settings.features_highest_pca_mini
         poly = PolynomialFeatures(degree=len(using_features))
         x = poly.fit_transform(self.train[using_features])
+        x_test = self.test.drop(columns=['Target'])
+        x_test = poly.fit_transform(x_test[using_features])
         reg = LinearRegression().fit(x, self.target)
         score = reg.score(x, self.target)
         prediction = reg.predict(x)
-        prediction_unscaled = self.un_normalize(prediction, scaler)
-        target_unscaled = self.un_normalize(self.raw_train['Target'], scaler)
-        plotter.prediction_vs_target(prediction, self.target, name="xxpolynom_regression_high_pca")
-        plotter.prediction_vs_target(prediction_unscaled, target_unscaled, name="xxpolynom_regression_unscaled_high_pca")
+        prediction_test = reg.predict(x_test)
+        print(f"prediction test {np.where(prediction_test>100)}")
+        prediction_test = np.array([[0.0000001,] if abs(i[0]) > 100 else i for i in prediction_test])
+        prediction_unscaled, target_unscaled = self.unscale_results(prediction,
+                                                                    self.raw_train['Target'],
+                                                                    scaler, raw_data=self.raw_train)
+
+        prediction_test_unscaled, target_test_unscaled = self.unscale_results(prediction_test,
+                                                                               self.test['Target'].values, scaler,
+                                                                               raw_data=self.test)
+
+        plotter.prediction_vs_target(prediction, self.target, name="xxxxpolynom_regression_high_pca")
+        plotter.prediction_vs_target(prediction_unscaled, target_unscaled, name="xxxxpolynom_regression_unscaled_high_pca")
+        plotter.prediction_vs_target(prediction_test,  self.test['Target'].values, name="test_polynom_regression_high_pca")
+        plotter.prediction_vs_target(prediction_test_unscaled, target_test_unscaled, name="test_polynom_regression_unscaled_high_pca")
         mae = mean_absolute_error(prediction, self.target)
         mae_unscaled = mean_absolute_error(prediction_unscaled, target_unscaled)
+        mae_test = mean_absolute_error(prediction_test, self.target_test)
+        mae_test_unscaled = mean_absolute_error(prediction_test_unscaled, target_test_unscaled)
         avg_target = np.mean(self.target)
+        avg_target_test = np.mean(self.target_test)
         percentage_off = (mae/avg_target)*100
+        percentage_off_test = (mae_test/avg_target_test)*100
         with open('polynomial_regr_scores.txt', 'a') as file:
             file.write(f"features: {using_features} score: {score},"
-                       f" mae: {mae}, mae_unscaled: {mae_unscaled}, % off from avg target {percentage_off}\n")
-
-        y_true = np.asarray([y[0] for y in self.target])
-        loss = (abs(y_true - prediction) / avg_target) * 100
-        print(f"prediction {prediction}")
-        print(f"y_true {y_true}")
-        print(f"Polynom regression {loss}, mean {np.mean(loss)}")
+                       f" mae: {mae}, mae_unscaled: {mae_unscaled}, % off from avg target {percentage_off}\n"
+                       f" test mae: {mae_test}, test mae unscaled {mae_test_unscaled} % off from avg target {percentage_off_test}\n")
 
     def _baseline_model(self, input_dim):
         # create model
@@ -132,14 +152,15 @@ class Models:
         model, keras_callback = self._baseline_model(input_dim=x.shape[1])
         self._evaluate_neural_net_model(model, keras_callback, x, y)
 
-    def svm(self):
-        svr_poly = SVR(kernel='poly', C=100, gamma='auto', degree=12, epsilon=.1,
+    def svm(self, scaler):
+        svr_poly = SVR(kernel='poly', C=100, gamma='auto', degree=6, epsilon=.005,
                        coef0=1)
-        x = self.train[settings.features_highest_pca]
-        y_true = np.asarray([y[0] for y in self.target])
+        x = self.train[settings.features_high_correlation]
+        y_true = self.target.reshape(len(self.target),1)
         prediction = svr_poly.fit(x, y_true).predict(x)
-        loss = (abs(y_true - prediction) / y_true) * 100
-        print(f"prediction {prediction}")
-        print(f"y_true {y_true}")
-        print(f"svm MeanAbsolutePercentageError {loss}, mean {np.mean(loss)}")
+        prediction_unscaled = self.un_normalize(prediction, scaler)
+        target_unscaled = self.un_normalize(self.raw_train['Target'], scaler)
+        mae = mean_absolute_error(y_true, prediction)
+        mae_unscaled = mean_absolute_error(prediction_unscaled, target_unscaled)
+        print(f"svm MAE: {mae}, mae unscaled {mae_unscaled}")
         self._evaluate_mae(prediction, y_true, name="svm1")
