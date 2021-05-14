@@ -100,4 +100,12 @@ Random Forest, Decision Tree
 ## Another approach:
 Create Dataframes of data by SIDTank, train model per SIDTank. ToDo
 
+## Time series:
+
+### Sarima:
+
+Results on validation data<br>
+![alt text](graphs/time_series/sarimax_day_of_the_week.png) <br>
+
+
 
