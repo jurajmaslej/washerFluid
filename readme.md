@@ -105,7 +105,7 @@ Create Dataframes of data by SIDTank, train model per SIDTank. ToDo
 ### Sarima:
 
 Results on validation data<br>
-![alt text](graphs/time_series/sarimax_day_of_the_week.png) <br>
+![alt text](graphs_time_series/sarimax_day_of_the_week.png) <br>
 
 
 
