@@ -10,10 +10,9 @@ import settings
 
 
 def normalize_numeric(df):
-    plt.plot(df['Target'].values, ':')
-    plt.savefig('target.png')
+    #plt.plot(df['Target'].values, ':')
+    #plt.savefig('target.png')
     df_numeric = df[settings.features_numeric]
-    #df_num_normalized = (df_numeric-df_numeric.mean())/df_numeric.std()
     scaler = MinMaxScaler()
     df_numeric[df_numeric.columns] = scaler.fit_transform(df_numeric)
     for column in df_numeric.columns:

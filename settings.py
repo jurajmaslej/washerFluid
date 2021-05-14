@@ -51,8 +51,12 @@ features_neural_net = [ 'VolumeAvg7D','VolumeAvg3D', 'VolumeAvg1D', 'DaysBA_Migr
 features_highest_pca = ['SegmentId','TankAge','DaysBA_MigrHoliday', 'DaysBA_MigrVacation',
                         'DaysA_WaterChange','VolumeAvg1D','VolumeAvg3D',
                         'PrecipIntCoef', 'PrecipIntCoefAVG1D', 'PrecipIntCoefAVG3D',
-                        'TemperatureMin', 'TemperatureMax']
+                        'TemperatureMin', 'TemperatureMax', 'Target']
 
 features_highest_pca_mini = ['SegmentId','TankAge','DaysBA_MigrHoliday', 'DaysBA_MigrVacation',
                         'DaysA_WaterChange','VolumeAvg1D','VolumeAvg3D',
                         'PrecipIntCoef']
+
+time_series_features = ['DaysBA_MigrHoliday', 'DaysBA_MigrVacation', 'day_of_week',
+                        'DaysA_WaterChange', 'VolumeAvg1D', 'VolumeAvg3D','TemperatureMin', 'TemperatureMax','Humidity',
+                        'Target']
