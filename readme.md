@@ -125,6 +125,10 @@ We can see **better** results for prediction of low/zero sales
 ### Group by Date on Locations:
 Dataframe created from tanks from same Location ('SIDTank' without ```-x```).
 This group by got us multiple entries for one day. We used group by with ```mean()```.
-Results were not much better. This indicates there is not direct and strong connection between sales on various tanks on same Location.<br>
-
+Results were not much better.
+This might indicate there is not direct and strong connection between sales on various tanks on same Location.<br>
+Or model was not able to fit even this data <br>
 ![alt text](graphs_time_series/Sarimax_dates_filled_zeroes_on_locations_groupby_date/110706-7.png) <br>
+
+## Random Forest:
+ToDo
