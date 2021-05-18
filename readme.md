@@ -15,7 +15,7 @@
    Other issues:<br> 2.1. Too many days with snow - approximately 1/3 of days (Explanation: data from November to February) <br>
    2.2. `TemperatureMin/Max` correlates more with `AvgVolume7D` than `AvgVolume1D`.
    Would assume that actual temperature correlates more with 1 day average than 7 day average. <br>
-   2.3. Values higher than certain treshold for `Days_BA_xxxx` are grouped to one value. Not really an issue <br>
+   2.3. Values higher than certain threshold for `Days_BA_xxxx` are grouped to one value. Not really an issue <br>
 ### 3. Correlation:
 We are interested only in correlation with Target. We are not interested in correlation between Rain&Humidity.
 Therefore check only correlation with Target (or its averages). <br>
@@ -113,5 +113,18 @@ From the results we can see that decision to delete 'zero-sale' days was wrong.
 <br>
 ![alt text](graphs_time_series/sarimax_day_of_the_week_zero_sale_days_included.png) <br>
 
+### Adding zeroes to missing dates:
+Data were splitted by SIDTank and missing dates were inserted to dataframes with values set to zero <br>
+Example of prediction (trained only on one SIDTank) **without zeroes** insertion:<br>
+![alt text](graphs_time_series/sarimax_on_tank_ids/110706-7.png) <br>
+Example of prediction (trained only on one SIDTank) **with zeroes** insertion:<br>
+![alt text](graphs_time_series/sarimax_dates_filled_zeroes_on_tank_ids/110706-7.png) <br>
+We can see **better** results for prediction of low/zero sales
 
 
+### Group by Date on Locations:
+Dataframe created from tanks from same Location ('SIDTank' without ```-x```).
+This group by got us multiple entries for one day. We used group by with ```mean()```.
+Results were not much better. This indicates there is not direct and strong connection between sales on various tanks on same Location.<br>
+
+![alt text](graphs_time_series/Sarimax_dates_filled_zeroes_on_locations_groupby_date/110706-7.png) <br>
