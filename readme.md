@@ -104,8 +104,14 @@ Create Dataframes of data by SIDTank, train model per SIDTank. ToDo
 
 ### Sarima:
 
-Results on validation data<br>
+Results on validation data without zero-sales days<br>
 ![alt text](graphs_time_series/sarimax_day_of_the_week.png) <br>
+
+
+Results on validation data with zero-sales days included.
+From the results we can see that decision to delete 'zero-sale' days was wrong.
+<br>
+![alt text](graphs_time_series/sarimax_day_of_the_week_zero_sale_days_included.png) <br>
 
 
 
